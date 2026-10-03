@@ -32,7 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   font_awesome_flutter: ^11.0.0
-  get: ^4.7.3
+  go_router: ^17.5.0
   google_fonts: 8.2.1
 
 dev_dependencies:
@@ -65,10 +65,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family:  GT Sectra Fine
+    - family: GT Sectra Fine
       fonts:
         - asset: assets/fonts/GT Sectra Fine Regular.ttf
-        
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
