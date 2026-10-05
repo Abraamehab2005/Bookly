@@ -28,7 +28,7 @@ class BookAction extends StatelessWidget {
               ),
               fontSize: 16,
             ),
-          )
+          ),
         ],
       ),
     );
