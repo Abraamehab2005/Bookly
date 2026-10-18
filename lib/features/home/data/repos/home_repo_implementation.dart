@@ -14,7 +14,7 @@ class HomeRepoImpelmetion implements HomeRepo {
     try {
       var data = await apiService.get(
         endpoint:
-            "volumes?q=subject:medicien&key=AIzaSyB7xk8hInpLMVGEVTOuHMjfg0FfYm-2D9U&Filtering=free-ebooks&Sorting=newest",
+            "volumes?filter=free-ebooks&orderBy=newest&q=programming&key=AIzaSyB7xk8hInpLMVGEVTOuHMjfg0FfYm-2D9U",
       );
       List<BookModel> books = [];
       final items = data['items'] as List<dynamic>? ?? [];
@@ -39,7 +39,7 @@ class HomeRepoImpelmetion implements HomeRepo {
     try {
       var data = await apiService.get(
         endpoint:
-            "volumes?q=subject:medicien&key=AIzaSyB7xk8hInpLMVGEVTOuHMjfg0FfYm-2D9U&Filtering=free-ebooks",
+            "volumes?q=programming&key=AIzaSyB7xk8hInpLMVGEVTOuHMjfg0FfYm-2D9U",
       );
       List<BookModel> books = [];
       //adding
