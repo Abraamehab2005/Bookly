@@ -13,8 +13,8 @@ void setupServiceLocator() {
     ),
   );
 
-  getIt.registerSingleton<HomeRepoImpelmetion>(
-    HomeRepoImpelmetion(
+  getIt.registerSingleton<HomeRepoImpelmention>(
+    HomeRepoImpelmention(
       getIt.get<ApiService>(),
     ),
   );

@@ -21,12 +21,12 @@ class Bookly extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => FeaturedBooksCubit(
-            getIt.get<HomeRepoImpelmetion>(),
+            getIt.get<HomeRepoImpelmention>(),
           )..fetchFeaturedBooks(), // calling the function
         ),
         BlocProvider(
           create: (context) => NewestCubit(
-            getIt.get<HomeRepoImpelmetion>(),
+            getIt.get<HomeRepoImpelmention>(),
           )..fetchNewestBooks(),
         ),
       ],

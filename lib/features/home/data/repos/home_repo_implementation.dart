@@ -5,10 +5,10 @@ import 'package:bookly/features/home/data/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-class HomeRepoImpelmetion implements HomeRepo {
+class HomeRepoImpelmention implements HomeRepo {
   final ApiService apiService;
 
-  HomeRepoImpelmetion(this.apiService);
+  HomeRepoImpelmention(this.apiService);
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
@@ -39,7 +39,7 @@ class HomeRepoImpelmetion implements HomeRepo {
     try {
       var data = await apiService.get(
         endpoint:
-            "volumes?q=programming&key=AIzaSyB7xk8hInpLMVGEVTOuHMjfg0FfYm-2D9U",
+            "volumes?q=computer science&key=AIzaSyB7xk8hInpLMVGEVTOuHMjfg0FfYm-2D9U",
       );
       List<BookModel> books = [];
       //adding
