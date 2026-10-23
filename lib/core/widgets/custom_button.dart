@@ -2,17 +2,18 @@ import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key , required this.text,  this.borderRadius, required this.backgroundColor, required this.textColor , this.fontSize});
+  const CustomButton({super.key , required this.text,  this.borderRadius, required this.backgroundColor, required this.textColor , this.fontSize, this.onPressed});
   final String text;
   final BorderRadius? borderRadius;
   final Color backgroundColor;
   final Color textColor;
   final double? fontSize;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 48,
-      child: TextButton(onPressed: (){},
+      child: TextButton(onPressed: onPressed,
       style: TextButton.styleFrom(
         backgroundColor: backgroundColor,
         shape: RoundedRectangleBorder(

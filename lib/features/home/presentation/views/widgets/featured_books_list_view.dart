@@ -1,18 +1,18 @@
+import 'package:bookly/core/utils/app_routers.dart';
 import 'package:bookly/core/widgets/custom_error_widget.dart';
 import 'package:bookly/core/widgets/custom_loading_indicator.dart';
 import 'package:bookly/features/home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key});
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
     builder: (context, state) {
-    //  print('STATE: $state');
       if(state is FeaturedBooksSuccess){
-      //  print('books is: ${state.books.length}');
         return SizedBox(
           height: MediaQuery.of(context).size.height * 0.3,
           child: ListView.builder(
@@ -20,12 +20,19 @@ class FeaturedBooksListView extends StatelessWidget {
             itemCount: state.books.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext context, int index) {
-            //  print(state.books[index].volumeInfo.imageLinks.thumbnail);
-              return Padding(
+              return  Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
-                child: CustomBookImage(
-                  imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
+                child: GestureDetector(
+                  onTap: (){
+                    GoRouter.of(context).push(
+                      AppRouters.kBookDetailsView,
+                      extra: state.books[index],
+                    );
+                  },
+                  child: CustomBookImage(
+                    imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
 
+                  ),
                 ),
               );
             },
